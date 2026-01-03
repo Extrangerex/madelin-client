@@ -30,7 +30,7 @@ python main.py init --base-url https://your-api
 ```bash
 python main.py register
 ```
-   - Options: `--key-file <path>`, `--mnemonic <phrase>`, `--store-mnemonic`.
+   - Options: `--key-file <path>`, `--mnemonic <\"phrase\">` (quoted), `--mnemonic-words <w1> <w2> ...` (unquoted words for recovery on another device), `--store-mnemonic`.
 3) Log in (retrieves token):
 ```bash
 python main.py login [--key-file <path>]

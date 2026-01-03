@@ -42,7 +42,14 @@ def parse_args(argv: Optional[Sequence[str]]) -> argparse.Namespace:
     init_cmd.add_argument("--json", action="store_true", dest="as_json", help="Print full JSON output")
 
     register_cmd = sub.add_parser("register", parents=[login_parent], help="Generate mnemonic, derive keys, register, and store locally")
-    register_cmd.add_argument("--mnemonic", help="Existing BIP-39 mnemonic; omit to auto-generate")
+    mnemonic_group = register_cmd.add_mutually_exclusive_group()
+    mnemonic_group.add_argument("--mnemonic", help="Existing BIP-39 mnemonic; omit to auto-generate")
+    mnemonic_group.add_argument(
+        "--mnemonic-words",
+        nargs="+",
+        dest="mnemonic_words",
+        help="Existing BIP-39 mnemonic as separate words (recovery on another device)",
+    )
     register_cmd.add_argument(
         "--store-mnemonic",
         action="store_true",

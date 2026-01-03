@@ -30,10 +30,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         save_config(args.config_file, args.base_url)
         result = {"base_url": args.base_url, "storedAt": str(args.config_file)}
     elif args.command == "register":
+        mnemonic = args.mnemonic
+        if getattr(args, "mnemonic_words", None):
+            mnemonic = " ".join(args.mnemonic_words)
         result = register_flow(
             base_url=resolve_base_url(args.base_url, args.config_file),
             key_path=args.key_file,
-            mnemonic=args.mnemonic,
+            mnemonic=mnemonic,
             store_mnemonic=args.store_mnemonic,
         )
     elif args.command == "mailbox":
