@@ -1,6 +1,11 @@
 # Madelin Client (CLI)
 
 Python CLI for Ed25519 authentication, direct mailbox handling, live chat, groups, and group mailboxes.
+ __  __    _    ____  _____ _     ___ _   _
+|  \/  |  / \  |  _ \| ____| |   |_ _| \ | |
+| |\/| | / _ \ | | | |  _| | |    | ||  \| |
+| |  | |/ ___ \| |_| | |___| |___ | || |\  |
+|_|  |_/_/   \_\____/|_____|_____|___|_| \_|
 
 ## Requirements
 - Python 3.9+
@@ -55,3 +60,6 @@ Shows messages in green with per-user color. Prompt: `<userId> >`.
 - All requests use `Authorization: Bearer <token>` obtained in `login_flow`.
 - Binary fields are base64-encoded; message/thread IDs and nonces are generated client-side.
 - Pagination cursor is base64 `ISO_DATE|id`; send it back as-is for manual pagination.
+
+## Need the server?
+If you need the server running or access to it, send me a DM on Instagram: @veutespeut.

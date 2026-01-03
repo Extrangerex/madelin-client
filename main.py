@@ -14,6 +14,15 @@ from group_chat import run_group_chat_console
 from messaging import make_plaintext_payload
 
 
+MADELIN_ASCII_ART = r"""
+ __  __    _    ____  _____ _     ___ _   _
+|  \/  |  / \  |  _ \| ____| |   |_ _| \ | |
+| |\/| | / _ \ | | | |  _| | |    | ||  \| |
+| |  | |/ ___ \| |_| | |___| |___ | || |\  |
+|_|  |_/_/   \_\____/|_____|_____|___|_| \_|
+"""
+
+
 def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parse_args(argv)
 
@@ -115,6 +124,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         print(json.dumps(result, indent=2))
     else:
         if args.command == "init":
+            print(MADELIN_ASCII_ART)
             print("baseUrl stored at:", result["storedAt"])
             print("baseUrl:", result["base_url"])
         elif args.command == "register":

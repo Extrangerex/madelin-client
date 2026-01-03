@@ -41,7 +41,11 @@ class RealtimeClient:
 
     def connect(self) -> None:
         self._log(f"socket connecting to {self._base_url}")
-        self._sio.connect(self._base_url, auth={"token": self._token})
+        self._sio.connect(
+            self._base_url,
+            auth={"token": self._token},
+            headers={"Authorization": f"Bearer {self._token}"},
+        )
 
     def notify_send(self, to_user_id: str, payload: object) -> None:
         self._log(f"socket notify_send to={to_user_id} payload={payload}")
