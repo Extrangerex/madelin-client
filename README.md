@@ -4,11 +4,14 @@ Python CLI for Ed25519 authentication, direct mailbox handling, live chat, group
 
 ## Project idea
 Build a 100% anonymous messaging app you can self-host. The server is ready; for access details or help running it, see **Need the server?**.
+
+`
  __  __    _    ____  _____ _     ___ _   _
 |  \/  |  / \  |  _ \| ____| |   |_ _| \ | |
 | |\/| | / _ \ | | | |  _| | |    | ||  \| |
 | |  | |/ ___ \| |_| | |___| |___ | || |\  |
 |_|  |_/_/   \_\____/|_____|_____|___|_| \_|
+`
 
 ## Requirements
 - Python 3.9+
